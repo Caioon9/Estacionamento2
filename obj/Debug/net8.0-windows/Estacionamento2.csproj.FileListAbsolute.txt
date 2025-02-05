@@ -1,0 +1,17 @@
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\bin\Debug\net8.0-windows\Estacionamento2.exe
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\bin\Debug\net8.0-windows\Estacionamento2.deps.json
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\bin\Debug\net8.0-windows\Estacionamento2.runtimeconfig.json
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\bin\Debug\net8.0-windows\Estacionamento2.dll
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\bin\Debug\net8.0-windows\Estacionamento2.pdb
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\Estacionamento2.MenuForm.resources
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\Estacionamento2.csproj.GenerateResource.cache
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\Estacionamento2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\Estacionamento2.AssemblyInfoInputs.cache
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\Estacionamento2.AssemblyInfo.cs
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\Estacionamento2.csproj.CoreCompileInputs.cache
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\Estacionamento2.dll
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\refint\Estacionamento2.dll
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\Estacionamento2.pdb
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\Estacionamento2.genruntimeconfig.cache
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\ref\Estacionamento2.dll
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\Estacionamento2.Properties.Resources.resources
