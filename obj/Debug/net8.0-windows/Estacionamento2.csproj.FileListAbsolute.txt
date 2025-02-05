@@ -15,3 +15,13 @@ C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-win
 C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\Estacionamento2.genruntimeconfig.cache
 C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\ref\Estacionamento2.dll
 C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\Estacionamento2.Properties.Resources.resources
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\Estacionamento2.csproj.AssemblyReference.cache
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\Estacionamento2.Forms.AdicionarVeiculoForm.resources
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\Estacionamento2.sourcelink.json
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\Estacion.CDBD9AB1.Up2Date
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Data.SqlClient.dll

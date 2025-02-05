@@ -44,6 +44,7 @@
             buttonAdicionar.TabIndex = 0;
             buttonAdicionar.Text = "Adicionar";
             buttonAdicionar.UseVisualStyleBackColor = false;
+            buttonAdicionar.Click += buttonAdicionar_Click;
             // 
             // buttonVisualizar
             // 
