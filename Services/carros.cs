@@ -13,7 +13,7 @@
         {
             return new Carro
             {
-                Placa = placa,
+                Placa = placa.ToUpper(),
                 Modelo = modelo,
                 Cor = cor,
                 Marca = marca,
