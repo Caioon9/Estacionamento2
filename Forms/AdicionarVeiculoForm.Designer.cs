@@ -42,6 +42,8 @@
             comboBoxCor = new ComboBox();
             comboBoxVaga = new ComboBox();
             pictureBox1 = new PictureBox();
+            textBoxAPAGARDEPOIS = new TextBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -102,28 +104,28 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(439, 152);
+            textBox4.Location = new Point(430, 113);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(100, 23);
             textBox4.TabIndex = 6;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(439, 65);
+            textBox5.Location = new Point(430, 26);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(100, 23);
             textBox5.TabIndex = 7;
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(439, 94);
+            textBox6.Location = new Point(430, 55);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(100, 23);
             textBox6.TabIndex = 8;
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(439, 123);
+            textBox7.Location = new Point(430, 84);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(100, 23);
             textBox7.TabIndex = 9;
@@ -151,12 +153,11 @@
             // comboBoxVaga
             // 
             comboBoxVaga.FormattingEnabled = true;
-            comboBoxVaga.Items.AddRange(new object[] { "Fiat", "Volkswagen", "Chevrolet", "Toyota" });
-            comboBoxVaga.Location = new Point(37, 142);
+            comboBoxVaga.Location = new Point(12, 155);
             comboBoxVaga.Name = "comboBoxVaga";
             comboBoxVaga.Size = new Size(121, 23);
             comboBoxVaga.TabIndex = 14;
-            comboBoxVaga.Text = "Vaga";
+            comboBoxVaga.Text = "0";
             // 
             // pictureBox1
             // 
@@ -166,12 +167,32 @@
             pictureBox1.TabIndex = 15;
             pictureBox1.TabStop = false;
             // 
+            // textBoxAPAGARDEPOIS
+            // 
+            textBoxAPAGARDEPOIS.ForeColor = SystemColors.MenuText;
+            textBoxAPAGARDEPOIS.Location = new Point(12, 227);
+            textBoxAPAGARDEPOIS.Name = "textBoxAPAGARDEPOIS";
+            textBoxAPAGARDEPOIS.PlaceholderText = "Placa...";
+            textBoxAPAGARDEPOIS.Size = new Size(344, 23);
+            textBoxAPAGARDEPOIS.TabIndex = 16;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 137);
+            label1.Name = "label1";
+            label1.Size = new Size(94, 15);
+            label1.TabIndex = 17;
+            label1.Text = "Selecione a vaga";
+            // 
             // AdicionarVeiculoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(610, 258);
+            Controls.Add(label1);
+            Controls.Add(textBoxAPAGARDEPOIS);
             Controls.Add(pictureBox1);
             Controls.Add(comboBoxVaga);
             Controls.Add(comboBoxCor);
@@ -210,5 +231,7 @@
         private ComboBox comboBoxCor;
         private ComboBox comboBoxVaga;
         private PictureBox pictureBox1;
+        private TextBox textBoxAPAGARDEPOIS;
+        private Label label1;
     }
 }

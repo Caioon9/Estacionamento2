@@ -52,23 +52,23 @@ namespace Estacionamento2.Services
             });
         }
 
-        // Inserir um novo veículo e associá-lo ao cliente pelo ID
-        public void InserirVeiculo(int clienteId, string placa, string modelo, string cor, string marca, string ano, int vaga)
+        public void InserirVeiculo(Carro carro)
         {
-            string query = @"INSERT INTO Veiculos (ID, Placa, Modelo, Cor, Marca, Ano, Vaga, HoraEntrada, HoraSaida) 
-                             VALUES (@ID, @Placa, @Modelo, @Cor, @Marca, @Ano, @Vaga, @HoraEntrada, NULL)";
+            string query = @"INSERT INTO Veiculos ( Placa, Modelo, Cor, Marca, Ano, Vaga, HoraEntrada, HoraSaida) 
+                             VALUES ( @Placa, @Modelo, @Cor, @Marca, @Ano, @Vaga, @HoraEntrada, NULL)";
 
             ExecutarComando(query, cmd =>
             {
-                cmd.Parameters.AddWithValue("@ID", clienteId);
-                cmd.Parameters.AddWithValue("@Placa", placa);
-                cmd.Parameters.AddWithValue("@Modelo", modelo);
-                cmd.Parameters.AddWithValue("@Cor", cor);
-                cmd.Parameters.AddWithValue("@Marca", marca);
-                cmd.Parameters.AddWithValue("@Ano", ano);
-                cmd.Parameters.AddWithValue("@Vaga", vaga);
+                cmd.Parameters.AddWithValue("@Placa", carro.Placa);
+                cmd.Parameters.AddWithValue("@Modelo", carro.Modelo);
+                cmd.Parameters.AddWithValue("@Cor", carro.Cor);
+                cmd.Parameters.AddWithValue("@Marca", carro.Marca);
+                cmd.Parameters.AddWithValue("@Ano", carro.Ano);
+                cmd.Parameters.AddWithValue("@Vaga", carro.Vaga);
                 cmd.Parameters.AddWithValue("@HoraEntrada", DateTime.Now);
+
             });
+            MessageBox.Show("Veículo adicionado com sucesso!");
         }
 
         // Método para inserir cliente e veículo ao mesmo tempo
