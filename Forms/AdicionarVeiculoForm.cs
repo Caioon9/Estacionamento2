@@ -32,7 +32,15 @@ namespace Estacionamento2.Forms
         {
             try
             {
+                Cliente cliente = new Cliente();
                 Carro carro = new Carro();
+
+                cliente = cliente.Adicionar(
+                    textBoxNome.Text,
+                    textBoxCpf.Text,
+                    textBoxTelefone.Text,
+                    textBoxEmail.Text
+                    );
                 carro = carro.Adicionar(
                     textBoxPlaca.Text,
                     textBoxModelo.Text,
@@ -44,7 +52,8 @@ namespace Estacionamento2.Forms
 
                 if (AcesarCarrosClasse.VerificarInformacoes(carro) == true)
                 {
-                    AcesarConexaoSql.InserirVeiculo(carro);
+                    AcesarConexaoSql.InserirClienteEVeiculo(cliente, carro);
+                    AdicionarValoresComboBox();
                 }
                 else
                 {
@@ -64,7 +73,7 @@ namespace Estacionamento2.Forms
             for (int i = 1; i < 31; i++)
             {
                 if (!vagasOcupadas.Contains(i))
-                comboBoxVaga.Items.Add(i);
+                    comboBoxVaga.Items.Add(i);
             }
         }
     }

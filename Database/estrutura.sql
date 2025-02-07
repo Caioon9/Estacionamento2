@@ -1,1 +1,1 @@
-﻿select * from veiculos
+﻿select * from Veiculos;

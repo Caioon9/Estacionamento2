@@ -5,7 +5,6 @@ namespace Estacionamento2.Services
     public class Carro
     {
         ConexaoSQL AcessarConexaoSQL = new ConexaoSQL();
-        List<int> VagasOcupadas = new List<int>();
 
         public string Placa { get; set; }
         public string Modelo { get; set; }

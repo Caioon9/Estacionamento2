@@ -34,15 +34,14 @@
             textBoxPlaca = new TextBox();
             textBoxModelo = new TextBox();
             textBoxAno = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
+            textBoxEmail = new TextBox();
+            textBoxNome = new TextBox();
+            textBoxCpf = new TextBox();
+            textBoxTelefone = new TextBox();
             comboBoxMarca = new ComboBox();
             comboBoxCor = new ComboBox();
             comboBoxVaga = new ComboBox();
             pictureBox1 = new PictureBox();
-            textBoxAPAGARDEPOIS = new TextBox();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -60,7 +59,7 @@
             // labelVeiculo
             // 
             labelVeiculo.AutoSize = true;
-            labelVeiculo.Location = new Point(80, 9);
+            labelVeiculo.Location = new Point(185, 9);
             labelVeiculo.Name = "labelVeiculo";
             labelVeiculo.Size = new Size(45, 15);
             labelVeiculo.TabIndex = 1;
@@ -69,7 +68,7 @@
             // labelCliente
             // 
             labelCliente.AutoSize = true;
-            labelCliente.Location = new Point(453, 10);
+            labelCliente.Location = new Point(351, 10);
             labelCliente.Name = "labelCliente";
             labelCliente.Size = new Size(44, 15);
             labelCliente.TabIndex = 2;
@@ -102,33 +101,37 @@
             textBoxAno.Size = new Size(121, 23);
             textBoxAno.TabIndex = 5;
             // 
-            // textBox4
+            // textBoxEmail
             // 
-            textBox4.Location = new Point(430, 113);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 6;
+            textBoxEmail.Location = new Point(351, 114);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.PlaceholderText = "Email...";
+            textBoxEmail.Size = new Size(188, 23);
+            textBoxEmail.TabIndex = 6;
             // 
-            // textBox5
+            // textBoxNome
             // 
-            textBox5.Location = new Point(430, 26);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 7;
+            textBoxNome.Location = new Point(351, 27);
+            textBoxNome.Name = "textBoxNome";
+            textBoxNome.PlaceholderText = "Nome...";
+            textBoxNome.Size = new Size(188, 23);
+            textBoxNome.TabIndex = 7;
             // 
-            // textBox6
+            // textBoxCpf
             // 
-            textBox6.Location = new Point(430, 55);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
-            textBox6.TabIndex = 8;
+            textBoxCpf.Location = new Point(351, 56);
+            textBoxCpf.Name = "textBoxCpf";
+            textBoxCpf.PlaceholderText = "Cpf...";
+            textBoxCpf.Size = new Size(188, 23);
+            textBoxCpf.TabIndex = 8;
             // 
-            // textBox7
+            // textBoxTelefone
             // 
-            textBox7.Location = new Point(430, 84);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(100, 23);
-            textBox7.TabIndex = 9;
+            textBoxTelefone.Location = new Point(351, 85);
+            textBoxTelefone.Name = "textBoxTelefone";
+            textBoxTelefone.PlaceholderText = "Telefone...";
+            textBoxTelefone.Size = new Size(188, 23);
+            textBoxTelefone.TabIndex = 9;
             // 
             // comboBoxMarca
             // 
@@ -167,15 +170,6 @@
             pictureBox1.TabIndex = 15;
             pictureBox1.TabStop = false;
             // 
-            // textBoxAPAGARDEPOIS
-            // 
-            textBoxAPAGARDEPOIS.ForeColor = SystemColors.MenuText;
-            textBoxAPAGARDEPOIS.Location = new Point(12, 227);
-            textBoxAPAGARDEPOIS.Name = "textBoxAPAGARDEPOIS";
-            textBoxAPAGARDEPOIS.PlaceholderText = "Placa...";
-            textBoxAPAGARDEPOIS.Size = new Size(344, 23);
-            textBoxAPAGARDEPOIS.TabIndex = 16;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -190,17 +184,16 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(610, 258);
+            ClientSize = new Size(550, 258);
             Controls.Add(label1);
-            Controls.Add(textBoxAPAGARDEPOIS);
             Controls.Add(pictureBox1);
             Controls.Add(comboBoxVaga);
             Controls.Add(comboBoxCor);
             Controls.Add(comboBoxMarca);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
+            Controls.Add(textBoxTelefone);
+            Controls.Add(textBoxCpf);
+            Controls.Add(textBoxNome);
+            Controls.Add(textBoxEmail);
             Controls.Add(textBoxAno);
             Controls.Add(textBoxModelo);
             Controls.Add(textBoxPlaca);
@@ -223,15 +216,14 @@
         private TextBox textBoxPlaca;
         private TextBox textBoxModelo;
         private TextBox textBoxAno;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
+        private TextBox textBoxEmail;
+        private TextBox textBoxNome;
+        private TextBox textBoxCpf;
+        private TextBox textBoxTelefone;
         private ComboBox comboBoxMarca;
         private ComboBox comboBoxCor;
         private ComboBox comboBoxVaga;
         private PictureBox pictureBox1;
-        private TextBox textBoxAPAGARDEPOIS;
         private Label label1;
     }
 }
