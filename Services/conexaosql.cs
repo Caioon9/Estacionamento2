@@ -144,6 +144,28 @@ namespace Estacionamento2.Services
             });
         }
 
+        public List<int> ConsultarVagasOcupadas()
+        {
+            string query = "SELECT Vaga FROM Veiculos WHERE Pago = 0 OR Pago IS NULL";
+
+
+            return ExecutarConsulta(query, cmd =>
+            {
+                List<int> vagas = new List<int>();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        vagas.Add(reader.GetInt32(reader.GetOrdinal("Vaga")));
+                    }
+                }
+                return vagas;
+            });
+        }
+
+
+
         // Atualizar hora de saída de um veículo
         public void AtualizarHoraSaida(string placa)
         {
