@@ -21,9 +21,11 @@ namespace Estacionamento2.Forms
     {
         Carro AcesarCarrosClasse = new Carro();
         ConexaoSQL AcesarConexaoSql = new ConexaoSQL();
+
         public AdicionarVeiculoForm()
         {
             InitializeComponent();
+            AdicionarValoresComboBox();
         }
 
         private void buttonAdicionar_Click(object sender, EventArgs e)
@@ -52,6 +54,17 @@ namespace Estacionamento2.Forms
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao adicionar veículo: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AdicionarValoresComboBox()
+        {
+            List<int> vagasOcupadas = AcesarConexaoSql.ConsultarVagasOcupadas();
+
+            for (int i = 1; i < 31; i++)
+            {
+                if (!vagasOcupadas.Contains(i))
+                comboBoxVaga.Items.Add(i);
             }
         }
     }
