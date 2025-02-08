@@ -20,6 +20,7 @@ namespace Estacionamento2.Forms
     public partial class AdicionarVeiculoForm : Form
     {
         Carro AcesarCarrosClasse = new Carro();
+        Cliente AcessarClienteClasse = new Cliente();
         ConexaoSQL AcesarConexaoSql = new ConexaoSQL();
 
         public AdicionarVeiculoForm()
@@ -50,7 +51,7 @@ namespace Estacionamento2.Forms
                     Convert.ToInt32(comboBoxVaga.Text)
                     );
 
-                if (AcesarCarrosClasse.VerificarInformacoes(carro) == true)
+                if (AcesarCarrosClasse.VerificarInformacoes(carro) && AcessarClienteClasse.VerificarInformacoes(cliente))
                 {
                     AcesarConexaoSql.InserirClienteEVeiculo(cliente, carro);
                     AdicionarValoresComboBox();
