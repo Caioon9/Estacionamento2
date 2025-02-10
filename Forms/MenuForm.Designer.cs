@@ -55,6 +55,7 @@
             buttonVisualizar.TabIndex = 1;
             buttonVisualizar.Text = "Visualizar";
             buttonVisualizar.UseVisualStyleBackColor = false;
+            buttonVisualizar.Click += buttonVisualizar_Click;
             // 
             // buttonEditar
             // 
@@ -65,6 +66,7 @@
             buttonEditar.TabIndex = 2;
             buttonEditar.Text = "Editar";
             buttonEditar.UseVisualStyleBackColor = false;
+            buttonEditar.Click += buttonEditar_Click;
             // 
             // buttonOpcoes
             // 
@@ -75,6 +77,7 @@
             buttonOpcoes.TabIndex = 3;
             buttonOpcoes.Text = "Opções";
             buttonOpcoes.UseVisualStyleBackColor = false;
+            buttonOpcoes.Click += buttonOpcoes_Click;
             // 
             // MenuForm
             // 

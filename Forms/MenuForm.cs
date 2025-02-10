@@ -19,5 +19,21 @@ namespace Estacionamento2
             AdicionarVeiculoForm InterfaceVeiculo = new AdicionarVeiculoForm();
             InterfaceVeiculo.Show();
         }
+
+        private void buttonVisualizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonOpcoes_Click(object sender, EventArgs e)
+        {
+            OpcoesForm InterfaceOpcoes = new OpcoesForm();
+            InterfaceOpcoes.Show();
+        }
     }
 }

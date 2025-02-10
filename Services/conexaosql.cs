@@ -127,8 +127,6 @@ namespace Estacionamento2.Services
             });
         }
 
-
-
         // Atualizar hora de saída de um veículo
         public void AtualizarHoraSaida(string placa)
         {
@@ -138,6 +136,36 @@ namespace Estacionamento2.Services
             {
                 cmd.Parameters.AddWithValue("@HoraSaida", DateTime.Now);
                 cmd.Parameters.AddWithValue("@Placa", placa);
+            });
+        }
+
+        public void AtualizarValorEVagas(double valor, int vaga)
+        {
+            string query = "UPDATE estacionamento SET valor_hora = @Valor_Hora, num_vagas = @Num_Vagas WHERE id = 1";
+
+            ExecutarComando(query, cmd =>
+            {
+                cmd.Parameters.AddWithValue("@Valor_Hora", valor);
+                cmd.Parameters.AddWithValue("@Num_Vagas", vaga);
+            });
+        }
+
+        public (decimal valorHora, int numVagas) ConsultarValorEVaga()
+        {
+            string query = "SELECT valor_hora, num_vagas FROM estacionamento WHERE id = 1"; // Supondo que a id 1 seja o registro que você quer consultar.
+
+            return ExecutarConsulta(query, cmd =>
+            {
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        decimal valorHora = reader.GetDecimal(reader.GetOrdinal("valor_hora"));
+                        int numVagas = reader.GetInt32(reader.GetOrdinal("num_vagas"));
+                        return (valorHora, numVagas);
+                    }
+                }
+                return (0, 0); // Caso não encontre nenhum dado
             });
         }
     }
