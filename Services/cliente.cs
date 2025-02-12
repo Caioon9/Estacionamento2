@@ -64,6 +64,7 @@ namespace Estacionamento2.Services
 
             return true;
         }
+
         static int CalcularDigito(string cpf, int pesoInicial)
         {
             int soma = 0;

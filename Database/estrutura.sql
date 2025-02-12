@@ -1,1 +1,1 @@
-﻿select * from estacionamento;
+﻿select * from veiculos;

@@ -18,8 +18,11 @@ namespace Estacionamento2.Forms
 
         public OpcoesForm()
         {
+
+
             InitializeComponent();
             AdicionarValoresCampos();
+
         }
 
         private void buttonAlterar_Click(object sender, EventArgs e)
