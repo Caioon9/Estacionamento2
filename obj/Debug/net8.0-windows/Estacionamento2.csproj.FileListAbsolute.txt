@@ -66,3 +66,4 @@ C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\bin\Debug\net8.0-win
 C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
 C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\Estacionamento2.Forms.OpcoesForm.resources
+C:\Users\caioo\source\repos\Estacionamento2\Estacionamento2\obj\Debug\net8.0-windows\Estacionamento2.Forms.VisualizarForm.resources

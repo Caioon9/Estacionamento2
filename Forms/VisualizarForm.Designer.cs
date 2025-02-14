@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dataGridViewVisualizar = new DataGridView();
             buttonAtualizar = new Button();
-            button2 = new Button();
+            buttonCalcular = new Button();
             label1 = new Label();
-            textBox1 = new TextBox();
+            textBoxplaca = new TextBox();
             button3 = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewVisualizar).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewVisualizar
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(38, 12);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(787, 332);
-            dataGridView1.TabIndex = 0;
+            dataGridViewVisualizar.AllowUserToAddRows = false;
+            dataGridViewVisualizar.AllowUserToDeleteRows = false;
+            dataGridViewVisualizar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewVisualizar.Location = new Point(38, 12);
+            dataGridViewVisualizar.Name = "dataGridViewVisualizar";
+            dataGridViewVisualizar.ReadOnly = true;
+            dataGridViewVisualizar.Size = new Size(787, 332);
+            dataGridViewVisualizar.TabIndex = 0;
             // 
             // buttonAtualizar
             // 
@@ -60,14 +60,15 @@
             buttonAtualizar.UseVisualStyleBackColor = false;
             buttonAtualizar.Click += buttonAtualizar_Click;
             // 
-            // button2
+            // buttonCalcular
             // 
-            button2.Location = new Point(331, 362);
-            button2.Name = "button2";
-            button2.Size = new Size(442, 76);
-            button2.TabIndex = 2;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            buttonCalcular.Location = new Point(331, 362);
+            buttonCalcular.Name = "buttonCalcular";
+            buttonCalcular.Size = new Size(442, 76);
+            buttonCalcular.TabIndex = 2;
+            buttonCalcular.Text = "button2";
+            buttonCalcular.UseVisualStyleBackColor = true;
+            buttonCalcular.Click += buttonCalcular_Click;
             // 
             // label1
             // 
@@ -78,12 +79,12 @@
             label1.TabIndex = 3;
             label1.Text = "label1";
             // 
-            // textBox1
+            // textBoxplaca
             // 
-            textBox1.Location = new Point(38, 381);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(131, 23);
-            textBox1.TabIndex = 4;
+            textBoxplaca.Location = new Point(38, 381);
+            textBoxplaca.Name = "textBoxplaca";
+            textBoxplaca.Size = new Size(131, 23);
+            textBoxplaca.TabIndex = 4;
             // 
             // button3
             // 
@@ -100,25 +101,25 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(858, 450);
             Controls.Add(button3);
-            Controls.Add(textBox1);
+            Controls.Add(textBoxplaca);
             Controls.Add(label1);
-            Controls.Add(button2);
+            Controls.Add(buttonCalcular);
             Controls.Add(buttonAtualizar);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridViewVisualizar);
             Name = "VisualizarForm";
             Text = "VisualizarForm";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewVisualizar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewVisualizar;
         private Button buttonAtualizar;
-        private Button button2;
+        private Button buttonCalcular;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox textBoxplaca;
         private Button button3;
     }
 }

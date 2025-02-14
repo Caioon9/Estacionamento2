@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Numerics;
 using Microsoft.Data.SqlClient;
 
 namespace Estacionamento2.Services
@@ -21,7 +22,6 @@ namespace Estacionamento2.Services
                 }
             }
         }
-
         // Método para executar consultas que retornam dados (SELECT)
         private T ExecutarConsulta<T>(string query, Func<SqlCommand, T> leituraAcao)
         {
@@ -88,22 +88,30 @@ namespace Estacionamento2.Services
             }
         }
 
-        // Consultar horário de entrada e saída
-        public (DateTime? horaEntrada, DateTime? horaSaida) ConsultarHorario(string placa)
+        //Select
+        public (DateTime? horaEntrada, DateTime? horaSaida, decimal valorHora) ConsultarHorario(string placa)
         {
-            string query = "SELECT HoraEntrada, HoraSaida FROM veiculos WHERE Placa = @Placa";
+            string query = @"
+        SELECT v.HoraEntrada, v.HoraSaida, e.ValorHora 
+        FROM veiculos v 
+        CROSS JOIN estacionamento e 
+        WHERE v.Placa = @Placa AND e.id = 1";
 
             return ExecutarConsulta(query, cmd =>
             {
                 cmd.Parameters.AddWithValue("@Placa", placa);
-                using (SqlDataReader reader = cmd.ExecuteReader())
+                using (SqlDataReader reader = cmd.ExecuteReader()) // erro aqui!!!!!!!!!!!!!!!!!!
                 {
                     if (reader.Read())
                     {
-                        return (reader["HoraEntrada"] as DateTime?, reader["HoraSaida"] as DateTime?);
+                        return (
+                            reader["HoraEntrada"] as DateTime?,
+                            reader["HoraSaida"] as DateTime?,
+                            reader.GetDecimal(reader.GetOrdinal("ValorHora"))
+                        );
                     }
                 }
-                return (null, null);
+                return (null, null, 0); // Retorna 0 como valor padrão para ValorHora se não encontrar nada
             });
         }
 
@@ -126,33 +134,9 @@ namespace Estacionamento2.Services
                 return vagas;
             });
         }
-
-        // Atualizar hora de saída de um veículo
-        public void AtualizarHoraSaida(string placa)
-        {
-            string query = "UPDATE veiculos SET HoraSaida = @HoraSaida WHERE Placa = @Placa";
-
-            ExecutarComando(query, cmd =>
-            {
-                cmd.Parameters.AddWithValue("@HoraSaida", DateTime.Now);
-                cmd.Parameters.AddWithValue("@Placa", placa);
-            });
-        }
-
-        public void AtualizarValorEVagas(double valor, int vaga)
-        {
-            string query = "UPDATE estacionamento SET valor_hora = @Valor_Hora, num_vagas = @Num_Vagas WHERE id = 1";
-
-            ExecutarComando(query, cmd =>
-            {
-                cmd.Parameters.AddWithValue("@Valor_Hora", valor);
-                cmd.Parameters.AddWithValue("@Num_Vagas", vaga);
-            });
-        }
-
         public (decimal valorHora, int numVagas) ConsultarValorEVaga()
         {
-            string query = "SELECT valor_hora, num_vagas FROM estacionamento WHERE id = 1"; // Supondo que a id 1 seja o registro que você quer consultar.
+            string query = "SELECT valor_hora, num_vagas FROM estacionamento WHERE id = 1";
 
             return ExecutarConsulta(query, cmd =>
             {
@@ -168,5 +152,62 @@ namespace Estacionamento2.Services
                 return (0, 0); // Caso não encontre nenhum dado
             });
         }
+
+        // Update 
+        public void AtualizarHoraSaida(string placa)
+        {
+            string query = "UPDATE veiculos SET HoraSaida = @HoraSaida WHERE Placa = @Placa";
+
+            ExecutarComando(query, cmd =>
+            {
+                cmd.Parameters.AddWithValue("@HoraSaida", DateTime.Now);
+                cmd.Parameters.AddWithValue("@Placa", placa);
+            });
+        }
+        public void AtualizarValorEVagas(double valor, int vaga)
+        {
+            string query = "UPDATE estacionamento SET valor_hora = @Valor_Hora, num_vagas = @Num_Vagas WHERE id = 1";
+
+            ExecutarComando(query, cmd =>
+            {
+                cmd.Parameters.AddWithValue("@Valor_Hora", valor);
+                cmd.Parameters.AddWithValue("@Num_Vagas", vaga);
+            });
+        }
+        public void AtualizarValorEstadia(string placa, decimal valorEstadia)
+        {
+            // Atualiza o banco de dados
+            string query = "UPDATE veiculos SET Valor = @Valor WHERE Placa = @Placa";
+
+            ExecutarComando(query, cmd =>
+            {
+                cmd.Parameters.AddWithValue("@Valor", valorEstadia);
+                cmd.Parameters.AddWithValue("@Placa", placa);
+            });
+        }
+
+
+        //DataTable
+        public DataTable GridConsultarVeiculosNaoPagos()
+        {
+            string query = @"
+        SELECT v.Placa, v.Modelo, c.Telefone, v.HoraEntrada, v.HoraSaida, v.Valor
+        FROM Veiculos v
+        INNER JOIN Clientes c ON v.ClienteID = c.ClienteID
+        WHERE v.Pago = 0 OR v.Pago IS NULL";
+
+            return ExecutarConsulta(query, cmd =>
+            {
+                DataTable dt = new DataTable();
+                using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                {
+                    adapter.Fill(dt);
+                }
+                return dt;
+            });
+        }
+
+
+
     }
 }

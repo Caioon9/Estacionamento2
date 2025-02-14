@@ -22,7 +22,8 @@ namespace Estacionamento2
 
         private void buttonVisualizar_Click(object sender, EventArgs e)
         {
-
+            VisualizarForm InterfaceVisualizar = new VisualizarForm();
+            InterfaceVisualizar.Show();
         }
 
         private void buttonEditar_Click(object sender, EventArgs e)
