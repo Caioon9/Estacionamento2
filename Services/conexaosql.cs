@@ -207,6 +207,26 @@ namespace Estacionamento2.Services
             });
         }
 
+        public DataTable GridConsultarVeiculoPorPlaca(string placa)
+        {
+            string query = @"
+    SELECT v.Placa, v.Modelo, c.Telefone, v.HoraEntrada, v.HoraSaida, v.Valor
+    FROM Veiculos v
+    INNER JOIN Clientes c ON v.ClienteID = c.ClienteID
+    WHERE v.Placa = @Placa";
+
+            return ExecutarConsulta(query, cmd =>
+            {
+                cmd.Parameters.AddWithValue("@Placa", placa);
+
+                DataTable dt = new DataTable();
+                using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                {
+                    adapter.Fill(dt);
+                }
+                return dt;
+            });
+        }
 
 
     }

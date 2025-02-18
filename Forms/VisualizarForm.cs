@@ -28,11 +28,6 @@ namespace Estacionamento2.Forms
             ListarVeiculosNaoPagos();
         }
 
-        private void ListarVeiculosNaoPagos()
-        {
-            dataGridViewVisualizar.DataSource = AcessarConexaoSQL.GridConsultarVeiculosNaoPagos();
-        }
-
         private void buttonCalcular_Click(object sender, EventArgs e)
         {
             if (dataGridViewVisualizar.SelectedRows.Count > 0) // Verifica se há uma linha selecionada
@@ -51,7 +46,17 @@ namespace Estacionamento2.Forms
 
         private void buttonProcurar_Click(object sender, EventArgs e)
         {
+            listarVeiculoPelaPlaca(textBoxplaca.Text);
+        }
 
+        private void ListarVeiculosNaoPagos()
+        {
+            dataGridViewVisualizar.DataSource = AcessarConexaoSQL.GridConsultarVeiculosNaoPagos();
+        }
+
+        private void listarVeiculoPelaPlaca(string placa)
+        {
+            dataGridViewVisualizar.DataSource = AcessarConexaoSQL.GridConsultarVeiculoPorPlaca(placa.ToUpper());
         }
     }
 }
