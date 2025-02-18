@@ -33,7 +33,7 @@
             buttonCalcular = new Button();
             label1 = new Label();
             textBoxplaca = new TextBox();
-            button3 = new Button();
+            buttonProcurar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewVisualizar).BeginInit();
             SuspendLayout();
             // 
@@ -66,7 +66,7 @@
             buttonCalcular.Name = "buttonCalcular";
             buttonCalcular.Size = new Size(442, 76);
             buttonCalcular.TabIndex = 2;
-            buttonCalcular.Text = "button2";
+            buttonCalcular.Text = "Calcular";
             buttonCalcular.UseVisualStyleBackColor = true;
             buttonCalcular.Click += buttonCalcular_Click;
             // 
@@ -75,9 +75,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(38, 362);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(109, 15);
             label1.TabIndex = 3;
-            label1.Text = "label1";
+            label1.Text = "Selecione por placa";
             // 
             // textBoxplaca
             // 
@@ -86,21 +86,22 @@
             textBoxplaca.Size = new Size(131, 23);
             textBoxplaca.TabIndex = 4;
             // 
-            // button3
+            // buttonProcurar
             // 
-            button3.Location = new Point(38, 410);
-            button3.Name = "button3";
-            button3.Size = new Size(131, 26);
-            button3.TabIndex = 5;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            buttonProcurar.Location = new Point(38, 410);
+            buttonProcurar.Name = "buttonProcurar";
+            buttonProcurar.Size = new Size(131, 26);
+            buttonProcurar.TabIndex = 5;
+            buttonProcurar.Text = "Procurar";
+            buttonProcurar.UseVisualStyleBackColor = true;
+            buttonProcurar.Click += buttonProcurar_Click;
             // 
             // VisualizarForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(858, 450);
-            Controls.Add(button3);
+            Controls.Add(buttonProcurar);
             Controls.Add(textBoxplaca);
             Controls.Add(label1);
             Controls.Add(buttonCalcular);
@@ -120,6 +121,6 @@
         private Button buttonCalcular;
         private Label label1;
         private TextBox textBoxplaca;
-        private Button button3;
+        private Button buttonProcurar;
     }
 }

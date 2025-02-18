@@ -92,7 +92,7 @@ namespace Estacionamento2.Services
         public (DateTime? horaEntrada, DateTime? horaSaida, decimal valorHora) ConsultarHorario(string placa)
         {
             string query = @"
-        SELECT v.HoraEntrada, v.HoraSaida, e.ValorHora 
+        SELECT v.HoraEntrada, v.HoraSaida, e.valor_hora
         FROM veiculos v 
         CROSS JOIN estacionamento e 
         WHERE v.Placa = @Placa AND e.id = 1";
@@ -100,14 +100,14 @@ namespace Estacionamento2.Services
             return ExecutarConsulta(query, cmd =>
             {
                 cmd.Parameters.AddWithValue("@Placa", placa);
-                using (SqlDataReader reader = cmd.ExecuteReader()) // erro aqui!!!!!!!!!!!!!!!!!!
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
                     {
                         return (
                             reader["HoraEntrada"] as DateTime?,
                             reader["HoraSaida"] as DateTime?,
-                            reader.GetDecimal(reader.GetOrdinal("ValorHora"))
+                            reader.GetDecimal(reader.GetOrdinal("valor_hora"))
                         );
                     }
                 }

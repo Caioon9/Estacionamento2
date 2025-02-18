@@ -20,15 +20,15 @@ namespace Estacionamento2.Forms
         public VisualizarForm()
         {
             InitializeComponent();
-            ConsultarVeiculosNaoPagos();
+            ListarVeiculosNaoPagos();
         }
 
         private void buttonAtualizar_Click(object sender, EventArgs e)
         {
-            ConsultarVeiculosNaoPagos();
+            ListarVeiculosNaoPagos();
         }
 
-        private void ConsultarVeiculosNaoPagos()
+        private void ListarVeiculosNaoPagos()
         {
             dataGridViewVisualizar.DataSource = AcessarConexaoSQL.GridConsultarVeiculosNaoPagos();
         }
@@ -40,11 +40,17 @@ namespace Estacionamento2.Forms
                 DataGridViewRow linhaSelecionada = dataGridViewVisualizar.SelectedRows[0]; // Obtém a primeira linha selecionada
                 string placa = linhaSelecionada.Cells["Placa"].Value.ToString(); // Obtém o valor da célula "Placa"
                 AcessarServicos.CalcularValorEstadia(placa);
+                ListarVeiculosNaoPagos();
             }
             else
             {
                 MessageBox.Show("Selecione uma linha primeiro.");
             }
+
+        }
+
+        private void buttonProcurar_Click(object sender, EventArgs e)
+        {
 
         }
     }
