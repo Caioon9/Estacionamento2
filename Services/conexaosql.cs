@@ -153,6 +153,23 @@ namespace Estacionamento2.Services
             });
         }
 
+        public bool VerificarFechamento(string placa)
+        {
+            string query = "SELECT Valor FROM veiculos WHERE Placa = @Placa";
+
+            return ExecutarConsulta(query, cmd =>
+            {
+                cmd.Parameters.AddWithValue("@Placa", placa);
+                var result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    return true;
+                }
+                return false;
+            });
+        }
+
+
         // Update 
         public void AtualizarHoraSaida(string placa)
         {
@@ -185,6 +202,17 @@ namespace Estacionamento2.Services
                 cmd.Parameters.AddWithValue("@Placa", placa);
             });
         }
+        public void AtualizarStatusPagamento(string placa)
+        {
+            string query = "UPDATE veiculos SET Pago = @pago WHERE Placa = @Placa";
+
+            ExecutarComando(query, cmd =>
+            {
+                cmd.Parameters.AddWithValue("@pago", 1);
+                cmd.Parameters.AddWithValue("@Placa", placa);
+            });
+        }
+
 
 
         //DataTable

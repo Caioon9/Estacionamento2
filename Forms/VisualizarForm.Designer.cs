@@ -34,6 +34,7 @@
             label1 = new Label();
             textBoxplaca = new TextBox();
             buttonProcurar = new Button();
+            buttonFechar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridViewVisualizar).BeginInit();
             SuspendLayout();
             // 
@@ -62,7 +63,7 @@
             // 
             // buttonCalcular
             // 
-            buttonCalcular.Location = new Point(331, 362);
+            buttonCalcular.Location = new Point(257, 362);
             buttonCalcular.Name = "buttonCalcular";
             buttonCalcular.Size = new Size(442, 76);
             buttonCalcular.TabIndex = 2;
@@ -96,11 +97,22 @@
             buttonProcurar.UseVisualStyleBackColor = true;
             buttonProcurar.Click += buttonProcurar_Click;
             // 
+            // buttonFechar
+            // 
+            buttonFechar.Location = new Point(714, 362);
+            buttonFechar.Name = "buttonFechar";
+            buttonFechar.Size = new Size(111, 76);
+            buttonFechar.TabIndex = 6;
+            buttonFechar.Text = "Fechar";
+            buttonFechar.UseVisualStyleBackColor = true;
+            buttonFechar.Click += buttonFechar_Click;
+            // 
             // VisualizarForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(858, 450);
+            Controls.Add(buttonFechar);
             Controls.Add(buttonProcurar);
             Controls.Add(textBoxplaca);
             Controls.Add(label1);
@@ -122,5 +134,6 @@
         private Label label1;
         private TextBox textBoxplaca;
         private Button buttonProcurar;
+        private Button buttonFechar;
     }
 }

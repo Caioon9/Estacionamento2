@@ -49,6 +49,23 @@ namespace Estacionamento2.Forms
             listarVeiculoPelaPlaca(textBoxplaca.Text);
         }
 
+        private void buttonFechar_Click(object sender, EventArgs e)
+        {
+            string Placa = dataGridViewVisualizar.SelectedRows[0].Cells["Placa"].Value.ToString();
+            try
+            {
+                if (AcessarConexaoSQL.VerificarFechamento(Placa))
+                {
+                    AcessarConexaoSQL.AtualizarStatusPagamento(Placa);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao fechar vaga: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
         private void ListarVeiculosNaoPagos()
         {
             dataGridViewVisualizar.DataSource = AcessarConexaoSQL.GridConsultarVeiculosNaoPagos();
@@ -58,5 +75,7 @@ namespace Estacionamento2.Forms
         {
             dataGridViewVisualizar.DataSource = AcessarConexaoSQL.GridConsultarVeiculoPorPlaca(placa.ToUpper());
         }
+
+
     }
 }
